@@ -1,0 +1,234 @@
+.party{
+	position: relative;
+	width: 60%;
+	height: 60%;
+	top: 7%;
+}
+th {
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(11%, #ffb76b),
+		color-stop(72%, #ff7f04));
+}
+
+table,th {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #a9c6c9;
+}
+
+td {
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #7d7e7d),
+		color-stop(100%, #0e0e0e));
+	color: white;
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #a9c6c9;
+}
+
+#popup {
+	position: relative;
+	width: 210px;
+	height: 130px;
+	display: inline-block;
+}
+
+#img {
+	position: relative;
+	width: 100px;
+	height: 100px;
+	border-radius: 10px;
+	display: inline-block;
+}
+
+#title {
+	font-size: 15px;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff),
+		color-stop(50%, #f3f3f3), color-stop(51%, #ededed),
+		color-stop(100%, #ffffff));
+	display: inline-block;
+	float: right;
+	text-align: center;
+	font-weight: bold;
+	width: 99px;
+	height: 99px;
+	margin-left: 1px;
+	position: absolute;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+top: -1%;
+left: 114%;
+
+}
+
+
+#name {
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #b7deed),
+		color-stop(50%, #71ceef), color-stop(67%, #21b4e2),
+		color-stop(100%, #b7deed));
+	text-align: center;
+	font-weight: bold;
+	font-size: 15px;
+	width: 203px;
+	height: 30px;
+	top: 2px;
+	position: relative;
+	border-radius: 3px;
+}
+
+body {
+	overflow: auto;
+}
+
+#content,#wrap {
+	position: relative;
+}
+
+#map {
+	width: 90%;
+	height: 90%;
+	position: relative;
+	top: 8px;
+	left: 5%;
+}
+
+#button {
+	position: relative;
+	display: inline-block;
+	top: -100px;
+}
+
+.info {
+	padding: 6px 8px;
+	font: 14px/16px Arial, Helvetica, sans-serif;
+	background: white;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff),
+		color-stop(50%, #f3f3f3), color-stop(51%, #ededed),
+		color-stop(100%, #ffffff));
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+	border-radius: 5px;
+	min-width: 218px;
+	font-weight: 800;
+    font-size: 13px;
+}
+
+.info h4 {
+	margin: 0 0 5px;
+	color: #777;
+}
+
+.legend {
+	text-align: left;
+	line-height: 18px;
+	color: #555;
+}
+
+.legend i {
+	width: 18px;
+	height: 18px;
+	float: left;
+	margin-right: 8px;
+	opacity: 0.7;
+}
+
+body {
+	margin: 0px;
+	overflow: hidden;
+}
+
+@font-face {
+	font-family: 'Fjalla One';
+	font-style: normal;
+	font-weight: 300;
+	src: local('Fjalla One'), local('FjallaOne-Regular'),
+		url(http://themes.googleusercontent.com/static/fonts/fjallaone/v1/rxxXUYj4oZ6Q5oDJFtEd6hsxEYwM7FgeyaSgU71cLG0.woff)
+		format('woff');
+}
+
+.fancyInput {
+	position: relative;
+	background: -webkit-radial-gradient(#205983, #0A2742);
+	background: radial-gradient(#205983, #0A2742);
+	max-width: 90%;
+	min-width: 50%;
+	
+	font-size: 30px;
+color: #FFF;
+vertical-align: middle;
+line-height: 2.3;
+	overflow: hidden;
+	text-align: left;
+	box-shadow: 0 3px 0 rgba(255, 255, 255, .15), 0 3px 5px
+		rgba(0, 0, 0, .2) inset, 0 0 12px rgba(255, 255, 255, .1);
+	padding: 8px 20px;
+	border-radius: 10px;
+	background: -webkit-radial-gradient(#205983, #0A2742);
+}
+
+#wrap {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+}
+
+h1 {
+	font-family: 'Fjalla One';
+	font-style: normal;
+	font-weight: 300;
+	src: local('Fjalla One'), local('FjallaOne-Regular'),
+		url(http://themes.googleusercontent.com/static/fonts/fjallaone/v1/rxxXUYj4oZ6Q5oDJFtEd6hsxEYwM7FgeyaSgU71cLG0.woff)
+		format('woff');
+	text-align: center;
+	position: absolute;
+	top: -14px;
+	left: 45%;
+}
+
+#header {
+	position: absolute;
+	width: 100%;
+	height: 5.5%;
+	left: -200px;
+	top: 0px;
+	background-color: #fff;
+	display: inline-block;
+}
+
+#flag {
+	position: relative;
+	width: 3%;
+	height: 100%;
+	left: 0px;
+	top: 0px;
+	display: inline-block;
+}
+
+#flag1 {
+	position: relative;
+	width: 15%;
+	height: 100%;
+	float: right;
+	top: 0px;
+	display: inline-block;
+}
+
+h3 {
+	position: relative;
+}
+
+#content {
+	background:-webkit-linear-gradient(rgb(244, 196, 48), white, white, rgb(19, 136, 8));
+	position: absolute;
+	top: 50px;
+	width: 100%;
+	height: 94.2%;
+	left: 0px;
+}
+
+#ip_div {
+	position: relative;
+	left: 12%;
+	top: 5px;
+	height: 50px;
+}

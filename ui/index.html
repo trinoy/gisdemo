@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>VOTE BETTER</title>
+
+<link rel="stylesheet" href="CSS/fancyInput.css">
+
+	<link rel="stylesheet" href="CSS/main.css" />
+
+	<link rel="stylesheet" href="leaflet/lib/leaflet.css" />
+	<link rel="stylesheet" href="leaflet/lib/leaflet.draw.css" />
+	
+
+	<script src="leaflet/lib/leaflet-src.js"></script>
+	<script src="leaflet/lib/Leaflet.draw.js"></script>
+
+	<link rel="stylesheet" href="CSS/MarkerCluster.css" />
+	<link rel="stylesheet" href="CSS/marker_default.css" />
+	
+	<script src="JS/markercluster-src.js"></script>
+	<script src="JS/realworld.js"></script>
+
+	<link rel="stylesheet" href="CSS/normalize.css">
+	<link rel="stylesheet" href="CSS/style.css">
+	<script src="JS/jquery.js" type="text/javascript"></script>
+	<script src="JS/modernizr.js" type="text/javascript"></script>
+	
+	<script src="leaflet/edit/handler/Edit.Poly.js"></script>
+	<script src="leaflet/edit/handler/Edit.SimpleShape.js"></script>
+	<script src="leaflet/edit/handler/Edit.Circle.js"></script>
+	<script src="leaflet/edit/handler/Edit.Rectangle.js"></script>
+
+	<script src="leaflet/draw/handler/Draw.Feature.js"></script>
+	<script src="leaflet/draw/handler/Draw.Polyline.js"></script>
+	<script src="leaflet/draw/handler/Draw.Polygon.js"></script>
+	<script src="leaflet/draw/handler/Draw.SimpleShape.js"></script>
+	<script src="leaflet/draw/handler/Draw.Rectangle.js"></script>
+	<script src="leaflet/draw/handler/Draw.Circle.js"></script>
+	<script src="leaflet/draw/handler/Draw.Marker.js"></script>
+
+	<script src="leaflet/ext/LatLngUtil.js"></script>
+	<script src="leaflet/ext/GeometryUtil.js"></script>
+	<script src="leaflet/ext/LineUtil.Intersect.js"></script>
+	<script src="leaflet/ext/Polyline.Intersect.js"></script>
+	<script src="leaflet/ext/Polygon.Intersect.js"></script>
+
+	<script src="leaflet/Control.Draw.js"></script>
+	<script src="leaflet/Tooltip.js"></script>
+	<script src="leaflet/Toolbar.js"></script>
+
+	<script src="leaflet/draw/DrawToolbar.js"></script>
+	<script src="leaflet/edit/EditToolbar.js"></script>
+	<script src="leaflet/edit/handler/EditToolbar.Edit.js"></script>
+	<script src="leaflet/edit/handler/EditToolbar.Delete.js"></script>
+
+
+
+<script>
+		$(document).ready(function() {
+			if(!Modernizr.meter){
+				alert('Sorry your brower does not support HTML5 progress bar');
+			} else {
+				var progressbar = $('#progressbar'),
+					max = progressbar.attr('max'),
+					time = (2000/max)*5,	
+			        value = progressbar.val();
+
+			    var loading = function() {
+			        value += 1;
+			        addValue = progressbar.val(value);
+			        
+			        $('.progress-value').html(value + '%');
+
+			        if (value == max) {
+			            clearInterval(animate);			           
+			        }
+			    };
+
+			    var animate = setInterval(function() {
+			        loading();
+			    }, time);
+			};
+		});
+	</script>
+
+</head>
+<body>
+	<div id='wrap'>
+        <div id="header">
+			<h1 style="font-family: -webkit-body;    font-weight: 800; color: green;">INDIA CONSTITUENCIES ANALYSIS</h1>
+		</div>
+		<div id="content">
+			<div id="map"></div>
+		</div>
+		
+		<div id = "wrapper" class="demo-wrapper html5-progress-bar">
+		<h3 style="margin-left: 3px;">LOADING DATA FROM HANA</h3>
+		<div class="progress-bar-wrapper">
+			<progress id="progressbar" value="0" max="100"></progress>
+			<span class="progress-value">0%</span>
+		</div>
+	</div>
+		
+	</div>
+
+<script src="JS/map.js"></script>
+</body>
+</html>
