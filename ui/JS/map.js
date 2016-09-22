@@ -2,16 +2,23 @@ var map = L.map('map', {
 	zoomControl : true
 }).setView([ 22.527636, 78.832675 ], 4);
 
-var statesData = [];
+//var statesData = [];
 var Poli_Icon;
 var markers = [];
 var markers_new = [];
 var marker;
 
-querystates(statesData);
+//querystates(statesData);
 
 
-var cloudmade = L
+var cloudmade = L.tileLayer('https://api.tiles.mapbox.com/v4/trinoy.1f4d707o/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoidHJpbm95IiwiYSI6InVnc1pBYjAifQ.IyyNxpSjpNesh4VIHP93hg', {
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+    maxZoom: 18,
+    id: 'trinoy.1f4d707o',
+    accessToken: 'pk.eyJ1IjoidHJpbm95IiwiYSI6InVnc1pBYjAifQ.IyyNxpSjpNesh4VIHP93hg'
+}).addTo(map);
+
+/*var cloudmade = L
 .tileLayer(
 		'http://{s}.tile.cloudmade.com/77b3738c9c724dd88e52815e3a5317da/122598/256/{z}/{x}/{y}.png',
 		{
@@ -19,7 +26,7 @@ var cloudmade = L
 			key : '77b3738c9c724dd88e52815e3a5317da',
 			//styleId : 120982
 			styleId: 122598
-		}).addTo(map);
+		}).addTo(map);*/
 
 // control that shows state info on hover
 
@@ -35,12 +42,12 @@ info.onAdd = function(map) {
 info.update = function(props) {
 	this._div.innerHTML = '<div id="flag1_div"><img id="flag1" src="  images/india.gif " /></div><span><h3>CONSTITUENCIES DETAIL </h3></span>'
 		+ (props ? '<table ><tr><th>State Name</th><td> '
-				+ props.ST_NAME
+				+ props.properties.NAME_1
 				+ '</td></tr><tr><th> Constituency Name </th><td> '
-				+ props.PC_NAME
+				+ 'jamnagar'
 				+ '</td></tr> <tr><th>Constituency Type</th><td>'
-				+ props.PC_TYPE
-				+ '</td></tr> <tr><th>No of Seats</th><td> ' + props.PC_NO
+				+ 'primary'
+				+ '</td></tr> <tr><th>No of Seats</th><td> ' + props.properties.ID_0
 				+ '</td></tr> <tr><th>Current-Party</th><td>'
 				+ props.PARTY + '</td></tr></table>'
 				: 'Hover over a state');
@@ -198,7 +205,7 @@ function style(feature) {
 	return {
 		weight : 1,
 		opacity : 0.5,
-		color : 'white',
+		color : 'fuchsia',
 		dashArray : '2',
 		fillOpacity : 0.8,
 		fillColor : feature.color
@@ -210,7 +217,7 @@ function highlightFeature(e) {
 
 	layer.setStyle({
 		weight : 5,
-		color : '#ccc',
+		color : 'blue',
 		dashArray : '',
 		fillOpacity : 0.1
 	});
@@ -238,6 +245,12 @@ function onEachFeature(feature, layer) {
 		click : zoomToFeature
 	});
 }
+
+$('#wrapper').hide();
+geojson = L.geoJson(statesData, {
+	style : style,
+	onEachFeature : onEachFeature
+}).addTo(map);
 
 
 function querystates(statesData){
